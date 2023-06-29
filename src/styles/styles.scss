@@ -77,11 +77,22 @@
   }
 
   select {
-    border-radius: 15rem;
-    $color: #2A8CE1;
+    border-radius: 15px;
     cursor: pointer;
     outline: none;
-    background-color: $color;
+    background-color: #edf0f3;
+    border: none;
+    padding: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  }
+  
+  select:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  select:focus {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   //----- Jugadores -----//

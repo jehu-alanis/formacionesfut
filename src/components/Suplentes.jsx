@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux";
 
-const Suplentes = ({suplentes, quitarSuplente}) => (
+const Suplentes = ({ suplentes, quitarSuplente }) => (
     <section>
         <h2>Suplentes</h2>
         <div className="suplentes">
@@ -9,7 +9,7 @@ const Suplentes = ({suplentes, quitarSuplente}) => (
                 suplentes.map(j => (
                     <article className="suplente" key={j.id}>
                         <div>
-                            <img src={j.foto} alt={j.nombre}/>
+                            <img src={j.foto} alt={j.nombre} />
                             <button onClick={() => quitarSuplente(j)}>X</button>
                         </div>
                         <p>{j.nombre}</p>

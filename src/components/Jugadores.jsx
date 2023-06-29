@@ -1,15 +1,15 @@
 import React, { useEffect, createRef } from "react"
 import { connect } from "react-redux";
 
-const Jugadores = ({jugadores, agregarTitular, agregarSuplente}) => {
-  
+const Jugadores = ({ jugadores, agregarTitular, agregarSuplente }) => {
+
   const gridJugadores = createRef()
 
   useEffect(() => {
     setScrollContainer()
     document.addEventListener('click', setScrollContainer)
-  }, []) 
-  
+  }, [])
+
   // Función que fija el tamaño del grid de los jugadores
   const setScrollContainer = (desktop = true) => {
     let container = gridJugadores.current
@@ -39,10 +39,7 @@ const Jugadores = ({jugadores, agregarTitular, agregarSuplente}) => {
     <section>
       <h2>Jugadores</h2>
       <div className="contenedor-jugadores">
-     
         <div ref={gridJugadores} onClick={() => setScrollContainer.bind(this)}>
-
-        
           {
             jugadores.map(j => (
               <article className="jugador" key={j.id}>

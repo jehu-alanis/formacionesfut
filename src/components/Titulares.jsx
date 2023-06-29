@@ -1,49 +1,44 @@
-import React,{ useState} from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import cancha from '../cancha.svg'
 
-
-const Titulares = ({titulares, quitarTitular}) => {
+const Titulares = ({ titulares, quitarTitular }) => {
     const [value, setValue] = useState({
-
-        values:"titular4231"
+        values: "titular4231"
     });
-    console.log(value.values,("valir actual"));
-   const onChange = (event) =>{
-    setValue({values: event.target.value});
-      };
-      return ( 
-      <section>
-        <h2>Titulares</h2>
 
-        
-        <div className="cancha">
-        
-            {
-                titulares.map(j => (
-                    <article className={value.values} key={j.id}>
-                        <div>
-                            <img src={j.foto} alt={j.nombre}/>
-                            <button onClick={() => quitarTitular(j)}>X</button>
-                        </div>
-                        <p>{j.nombre}</p>
-                    </article>
-                ))
-            }
-            
-            <img src={cancha} alt="Cancha de futbol" />
-            <label >
-      Pick your favorite line up:
-      <select value={value.values} onChange={onChange} >     
-     <option value="titular4231">4-2-3-1</option>
-     <option value="titular433">4-3-3</option>
-    <option selected value="titular">4-4-2</option>
-     <option value="titular532">5-3-2</option>
-     </select>
-     </label>
-        </div>
+    const onChange = (event) => {
+        setValue({ values: event.target.value });
+    };
+    return (
+        <section>
+            <h2>Titulares</h2>
+            <label>
+                    <h3>Escoge tu alineacion favorita:</h3>
+                    <select value={value.values} onChange={onChange}>
+                        <option value="titular4231">4-2-3-1</option>
+                        <option value="titular433">4-3-3</option>
+                        <option selected value="titular">4-4-2</option>
+                        <option value="titular532">5-3-2</option>
+                    </select>
+            </label>
+            <div className="cancha">
+                {
+                    titulares.map(j => (
+                        <article className={value.values} key={j.id}>
+                            <div>
+                                <img src={j.foto} alt={j.nombre} />
+                                <button onClick={() => quitarTitular(j)}>X</button>
+                            </div>
+                            <p>{j.nombre}</p>
+                        </article>
+                    ))
+                }
 
-    </section>
+                <img src={cancha} alt="Cancha de futbol" />
+                
+            </div>
+        </section>
     )
 }
 
